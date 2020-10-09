@@ -1,11 +1,58 @@
 <script>
-  (function() {
-    var appId = "{{settings.gtmId}}";
-    if (!appId) {
-      console.error('Warning: No APP NAME ID is defined. Please configure it in the apps admin.');
-      return
+// STP embed code START	
+(function(N,u,m,i,t,e,c){ N[i]||(N[i] = function(){(N[i].q=N[i].q||[]).push(arguments);});
+e=u.createElement('script'),c=u.scripts[0]; e.onreadystatechange = e.onload = a; e.src='https://chat.invoxcontact.com/serviceSystem/importFiles/?key=' + m;
+c.parentNode.insertBefore(e,c); var l = 4, r = 0; ex=0; function a() { r+=1;
+if(typeof(window[N[i].q[0][0]]) == 'function')  { window[N[i].q[0][0]](N[i].q[0][1]); ex=1; }
+else if (r <= l) {setTimeout(function() { if(ex==0) a();}, 5000);}}}
+(this,document,'{{settings.stpHash}}','nmtc'));
+nmtc('chatNumintec', {
+    	float_layout: '{{settings.stpFloatLayout}}',
+		element : '{{settings.stpElement}}',
+		title : '{{settings.stpTitle}}',
+        email: '{{settings.stpMail}}',
+        service: '{{settings.stpService}}',
+        reason: '{{settings.stpReason}}',
+        reason_require: '{{settings.stpReasonRequire}}',
+        reason_text: '{{settings.stpReasonText}}',        
+        background: '{{settings.stpBackground}}',
+        language: '{{settings.stpLanguage}}',
+        text_no_agent: '{{settings.stpTextNoAgent}}',
+        text_success_send_email: '{{settings.stpSuccessSendEmail}}',
+        captcha: '{{settings.stpCaptcha}}',
+        advertising: '{{settings.stpAdvertising}}',
+        advertising_text: '{{settings.stpAdvertisingText}}',
+        anonymous: '{{settings.stpAnonymous}}',
+        login: '{{settings.stpLogin}}',
+        register: '{{settings.stpRegister}}',
+        user_email: '{{settings.stpUserEmail}}',
+        user_name: '{{settings.stpUserName}}',
+        auto_submit: '{{settings.stpAutoSumbit}}',
+        privacy_policy: '{{settings.stpPrivacyPolicy}}',
+        privacy_policy_url: '{{settings.stpPrivacyPolicyUrl}}',
+        privacy_policy_text: '{{settings.stpPrivacyPolicyText}}',
+        css_src: 'https://www.stp.es/ecatalog/wp-content/themes/ecatalog/chat.css'
+});
+// STP embed code END 
+	
+// STP app code
+  (function(window) {
+    var stpMail = "{{settings.stpMail}}";
+    if (stpMail) {
+      window.stpMail = stpMail;
+    } else {
+      console.error(
+        "Warning: No STP email is defined. Please configure it in the apps admin."
+      );
     }
-
-    // Add script here
-  })()
+	var stpService = "{{settings.stpService}}";
+    if (stpService) {
+      window.stpService = stpService;
+    } else {
+      console.error(
+        "Warning: No STP service is defined. Please configure it in the apps admin."
+      );
+    }
+  })(window);
+// STP embed code END	
 </script>
